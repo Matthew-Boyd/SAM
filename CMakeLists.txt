@@ -227,7 +227,7 @@ if (UNIX)
 elseif (MSVC)
 	find_library( CURL_LIB
 				NAMES libcurl.lib
-				PATHS $ENV{WEXDIR}/build_vs2017/libcurl_ssl_x64/lib)
+				PATHS $ENV{WEXDIR}/build_resources/libcurl_ssl_x64/lib)
 	target_link_libraries(${SAM_EXE} ${CURL_LIB} Winhttp)
 endif()
 
@@ -319,7 +319,7 @@ else()
 			TARGET ${SAM_EXE}
 			POST_BUILD
 			COMMAND ${CMAKE_COMMAND}
-			ARGS -E copy $ENV{WEXDIR}/build_vs2017/libcurl_ssl_x64/bin/${file_i} ${SAMEXE_DIR}
+			ARGS -E copy $ENV{WEXDIR}/build_resources/libcurl_ssl_x64/bin/${file_i} ${SAMEXE_DIR}
 		)
 		endforeach( file_i )
 
